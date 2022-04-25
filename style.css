@@ -3,3 +3,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1366px;
+  margin: auto;
+}
+
+.box-balls {
+  display: flex;
+}
+
+.ball {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: brown;
+  margin: 4px;
+}
