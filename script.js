@@ -40,8 +40,8 @@ function generateColors() {
   }
 }
 
+const answer = document.getElementById('answer');
 function checkWin(collection, colorGuess) {
-  const answer = document.getElementById('answer');
   for (let index = 0; index < collection.length; index += 1) {
     collection[index].addEventListener('click', (event) => {
       if (colorGuess === event.target.style.backgroundColor) {
@@ -57,3 +57,22 @@ const balls = document.getElementsByClassName('ball');
 
 generateColors();
 checkWin(balls, color);
+
+function deleteColors() {
+  const colors = document.querySelectorAll('.ball');
+  const rgbColor = document.getElementById('rgb-color');
+  rgbColor.remove();
+  for (let index = 0; index < colors.length; index += 1) {
+    colors[index].remove();
+  }
+}
+
+function resetGame() {
+  answer.innerText = 'Escolha uma cor';
+  deleteColors();
+  generateColors();
+}
+
+const btnResetGame = document.getElementById('reset-game');
+
+btnResetGame.addEventListener('click', resetGame);
